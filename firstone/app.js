@@ -13,12 +13,12 @@ app.get("/input",(req,res,next)=>{
 
 app.post("/running",(req,res,next)=>{
     let p=[]
-    const word=req.body.name;
+    const result=req.body.name;
     //console.log(word);
-    fs.writeFile(path.join(__dirname,"text.txt"),word,(err)=>{
+    fs.writeFile(path.join(__dirname,"text.txt"),result,(err)=>{
         if(err)
             console.log(err);
-            p.push(word)
+            p.push(result)
             console.log(p)
             res.redirect("/");
     });
